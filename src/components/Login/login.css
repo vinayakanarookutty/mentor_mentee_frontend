@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+
+.bg {
+  background: url("/src/assets/login/5026563.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 80vh;
+  padding-top: 12rem;
+}
+
+.login__border {
+  height: 28rem;
+  width: 30rem;
+  margin: auto;
+  border-radius: 20% !important;
+}
+
+.login__heading {
+  text-align: center;
+  padding-top: 2.5rem;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 3rem;
+  letter-spacing: 5px;
+}
+
+.login__textfield {
+  width: 80%;
+  margin-left: 10% !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.login__button {
+  display: flex !important;
+  margin: auto !important;
+  letter-spacing: 6px !important;
+
+}
+
+.login__signup {
+  margin-top: 2rem;
+}
+.login__link {
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-family: "Open Sans", sans-serif;
+}
+
+.login__passreset {
+  color: #264653;
+}
+.login__link p {
+  margin-bottom: 0.9rem !important;
+  letter-spacing: 2px;
+}
+
+/* Media Query */
+
+@media only screen and (width:451px) and (max-width: 600px) {
+  .login__border{
+    width: 25rem;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+ 
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+ 
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+ 
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
+}
