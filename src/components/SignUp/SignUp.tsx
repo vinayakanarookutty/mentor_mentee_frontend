@@ -17,6 +17,8 @@ function SignUp() {
   const [name, setName] = React.useState("");
   const [emailId, setEmailId] = React.useState("");
   const [phoneNumber, setPhoneNumber] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [confirmpassword, setConfirmPassword] = React.useState("");
 
   //Handling Form
 
@@ -27,6 +29,7 @@ function SignUp() {
       name:name,
       phoneNumber:phoneNumber,
       emailId:emailId,
+      password:password
      };
 
      const response = await callApi({
@@ -43,6 +46,29 @@ function SignUp() {
 
   }
 
+  const validatePassword = () => {
+    if (password !== confirmpassword) {
+      // Return an error message
+      return 'Passwords must match.';
+    }
+  
+    // Return null if there are no errors
+    return null;
+  };
+  
+  const handleConfirmPasswordChange = (e:any) => {
+    setConfirmPassword(e.target.value);
+  
+    // Validate the password
+    const errorMessage = validatePassword();
+  
+    // Display the error message if there is one
+    if (errorMessage) {
+      // Display the error message
+      alert(errorMessage)
+    }
+  };
+
   return (
     <div className="bg">
       <Box component={Paper} elevation={15} className="signup__border">
@@ -52,41 +78,56 @@ function SignUp() {
             className="signup__textfeild"
             id="outlined-basic"
             label="Name"
+            required
+            value={name}
             variant="outlined"
             onChange={(e) => {
               setName(e.target.value);
             }}
           />
           <TextField
+          value={emailId}
            onChange={(e) => {
             setEmailId(e.target.value);
           }}
+          required
             className="signup__textfeild"
             id="outlined-basic"
             label="Email Address"
             variant="outlined"
           />
           <TextField
+          value={phoneNumber}
               onChange={(e) => {
                 setPhoneNumber(e.target.value);
               }}
             className="signup__textfeild"
-            type="password"
+       required
             id="outlined-basic"
             label="Mobile Number"
             variant="outlined"
           />
           <TextField
+          value={password}
+          onChange={(e) => {
+            setPassword(e.target.value);
+          }}
             className="signup__textfeild"
             type="password"
             id="outlined-basic"
+            required
             label="Password"
             variant="outlined"
           />
           <TextField
+          value={confirmpassword}
+           onChange={(e) => {
+            handleConfirmPasswordChange(e)
+          }}
             className="signup__textfeild"
             type="password"
             id="outlined-basic"
+            required
             label="Confirm Password"
             variant="outlined"
           />

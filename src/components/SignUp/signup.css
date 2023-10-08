@@ -1,23 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
 .bg {
+  
   background-image: url("/src//assets/login/5026563.jpg");
-  height: 80vh;
+  height: 73vh;
 }
 
 .signup__border {
-  height: 43rem;
+  height: 38rem;
   width: 40rem;
   margin: auto;
   border-radius: 20% !important;
-  margin-top: -6rem !important;
+  margin-top: -9rem !important;
+  box-shadow: 1%;
 }
 
 .signup__heading {
   text-align: center;
-  padding-top: 2.5rem;
+  padding-top: 2rem;
   font-family: "Open Sans", sans-serif;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   letter-spacing: 5px;
 }
 
@@ -34,12 +36,12 @@
 }
 
 .signup__dept {
-  width: 10rem !important;
+  width: 8rem !important;
   margin-left: 5% !important;
 }
 
 .signup__login {
-  margin-top: 2rem;
+  margin-top: 1rem;
   text-align: center;
   color: black;
   font-family: "Open Sans", sans-serif;
@@ -47,6 +49,7 @@
 }
 
 .signup__link {
+
   text-decoration: none;
   color: #264653;
 }

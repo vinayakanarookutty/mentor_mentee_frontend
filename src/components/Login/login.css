@@ -12,8 +12,9 @@
 .login__border {
   height: 28rem;
   width: 30rem;
-  margin: auto;
+margin-left: 33%;
   border-radius: 20% !important;
+  margin-top: -6rem;
 }
 
 .login__heading {
