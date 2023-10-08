@@ -1,13 +1,20 @@
-import { Box, TextField, Button, Typography, FormControl } from "@mui/material";
+import { Box, TextField, Button,  } from "@mui/material";
 import { Link } from "react-router-dom";
 import React from "react";
 import Paper from "@mui/material/Paper/Paper";
+import { callApi } from "../../apiServices/apiservices";
+import { useNavigate } from 'react-router-dom';
+import {
+ 
+  useMutation,
+
+} from 'react-query'
 import "./login.css";
 // import { useMutation } from "react-query";
-function Login() {
+function Login(prop:any) {
   const [userName, setUserName] = React.useState("");
   const [password, setPassword] = React.useState("");
-
+  const navigate = useNavigate();
   // const { mutate, isLoading } = useMutation(authenticate.loginUser, {
   //     onSuccess: ({ data, status }) => {
   //       console.log(data);
@@ -21,18 +28,55 @@ function Login() {
   //     },
   //   });
 
+  const { mutate: login } = useMutation({
+    mutationKey: ["Authorisation"],
+    mutationFn: async (data: any) => {
+      await callApi({
+        relativePath:`/users`,
+        method: "post",
+        data,
+      });
+    },
+    onSuccess: (response:any) => {
+      
+      if (response.status === 200) {
+        // The API request was successful (HTTP status 200)
+        prop.setUser(response.data);
+        navigate("/");
+       
+      } else {
+        // Handle other status codes or errors here
+        console.error(`API request failed with status ${response.status}`);
+      }
+    
+    }
+  });
+
   async function loginUser() {
     const userDetails = {
+      status:"Login",
       userName: userName,
       password: password,
     };
 
-    if (userDetails.password.length < 8) {
-      alert("Incorrect Password");
-      return;
-    }
+    // if (userDetails.password.length < 8) {
+    //   alert("Incorrect Password");
+    //   return;
+    // }
 
-    // await mutate(userDetails);
+    const response = await callApi({
+      method: "post",
+      data: userDetails,
+      relativePath: "/users",
+    });
+
+    if (response) {
+      console.log(response)
+    //  else if() {
+    
+    //   }
+    
+    }
   }
   return (
     <div className="bg">

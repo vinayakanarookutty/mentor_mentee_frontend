@@ -9,7 +9,8 @@ import "./signup.css";
 
 
 
-function SignUp() {
+function SignUp(prop:any) {
+  
   const navigate = useNavigate();
 
   //Declaring State of Objects.
@@ -41,7 +42,7 @@ function SignUp() {
     if (response?.data === "Email id is already taken") {
       alert("Email id already taken")
     } else {
-      navigate("/home")
+      navigate("/")
     }
 
   }
