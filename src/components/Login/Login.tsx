@@ -31,22 +31,24 @@ function Login(prop:any) {
   const { mutate: login } = useMutation({
     mutationKey: ["Authorisation"],
     mutationFn: async (data: any) => {
-      await callApi({
-        relativePath:`/users`,
+      const response = await callApi({
+        relativePath: `/users`,
         method: "post",
         data,
       });
+      return response;
     },
-    onSuccess: (response:any) => {
-      
-      if (response.status === 200) {
-        // The API request was successful (HTTP status 200)
-        prop.setUser(response.data);
+    onSuccess: (response:object) => {
+      console.log(response)
+      if (response && response.status === 200) {
         navigate("/");
-       
-      } else {
-        // Handle other status codes or errors here
-        console.error(`API request failed with status ${response.status}`);
+        prop.setUser(response.data);
+      } else if(response.status ==202)
+      {
+        alert("Email does not exist")
+      }
+      else {
+        alert("Password is wrong")
       }
     
     }
@@ -59,24 +61,8 @@ function Login(prop:any) {
       password: password,
     };
 
-    // if (userDetails.password.length < 8) {
-    //   alert("Incorrect Password");
-    //   return;
-    // }
-
-    const response = await callApi({
-      method: "post",
-      data: userDetails,
-      relativePath: "/users",
-    });
-
-    if (response) {
-      console.log(response)
-    //  else if() {
-    
-    //   }
-    
-    }
+login(userDetails)
+  
   }
   return (
     <div className="bg">
