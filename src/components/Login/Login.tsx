@@ -29,7 +29,7 @@ function Login(prop:any) {
   //   });
 
   const { mutate: login } = useMutation({
-    mutationKey: ["Authorisation"],
+    mutationKey: ["AuthorisationOfuser"],
     mutationFn: async (data: any) => {
       const response = await callApi({
         relativePath: `/users`,
