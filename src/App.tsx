@@ -31,7 +31,7 @@ const queryClient = new QueryClient()
 
 <Route path="/" element={<Home user={user}/>}/>
 
-<Route path="profile" element={<Profile user={user}/>} />
+
 
 </Routes>
 </BrowserRouter>

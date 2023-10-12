@@ -169,7 +169,12 @@ export default function Dashboard() {
           }}
         >
           <Toolbar />
-      
+
+          <Routes>
+        
+        <Route path="profile" element={<Profile />} />
+      </Routes>
+
         </Box>
       </Box>
     </ThemeProvider>
