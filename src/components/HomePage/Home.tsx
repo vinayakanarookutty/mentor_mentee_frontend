@@ -169,12 +169,14 @@ export default function Dashboard() {
           }}
         >
           <Toolbar />
-
-          <Routes>
-        
-        <Route path="profile" element={<Profile />} />
+         <Box component={Paper} sx={{height:"620px",width:"1430px",marginTop:"1%",marginLeft:"1%"}}>
+       
+         <Routes>
+        <Route path="/profile" element={<Profile />} />
+        {/* <Route path="/mentor" element={<Mentor />} /> */}
       </Routes>
 
+        </Box>
         </Box>
       </Box>
     </ThemeProvider>
