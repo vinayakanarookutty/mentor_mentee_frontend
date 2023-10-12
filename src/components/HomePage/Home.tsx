@@ -10,14 +10,21 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
+
 import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems } from './ListItems';
+import { BrowserRouter,  Route, Routes } from "react-router-dom";
+import {
+  QueryClient,
+  QueryClientProvider,
+} from 'react-query'
+import Profile from '../Profile/Profile';
+
+const queryClient = new QueryClient()
 
 function Copyright(props: any) {
   return (
@@ -162,7 +169,7 @@ export default function Dashboard() {
           }}
         >
           <Toolbar />
-         
+      
         </Box>
       </Box>
     </ThemeProvider>

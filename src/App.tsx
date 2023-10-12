@@ -3,6 +3,7 @@ import Login from "./components/Login/Login";
 import SignUp from "./components/SignUp/SignUp";
 import Home from "./components/HomePage/Home";
 import React from 'react'
+import Profile from "./components/Profile/Profile";
 import {
   QueryClient,
   QueryClientProvider,
@@ -25,8 +26,13 @@ const queryClient = new QueryClient()
 </Route> */}
 
 <Route path="logIn" element={<Login setUser={setUser}/>}/>
+
 <Route path="signUp" element={<SignUp setUser={setUser}/>}/>
+
 <Route path="/" element={<Home user={user}/>}/>
+
+<Route path="profile" element={<Profile user={user}/>} />
+
 </Routes>
 </BrowserRouter>
 </QueryClientProvider>
