@@ -98,6 +98,19 @@ export default function Dashboard() {
     setOpen(!open);
   };
 
+  // const routes = useRoutes([
+  //   {
+  //     path: '/',
+  //     element: <Dashboard />,
+  //     children: [
+  //       {
+  //         path: 'profile',
+  //         element: <Profile />,
+  //       },
+  //     ],
+  //   },
+  // ]);
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: 'flex' }}>
@@ -172,9 +185,19 @@ export default function Dashboard() {
          <Box component={Paper} sx={{height:"620px",width:"1430px",marginTop:"1%",marginLeft:"1%"}}>
        
          <Routes>
-        <Route path="/profile" element={<Profile />} />
-        {/* <Route path="/mentor" element={<Mentor />} /> */}
+         <Route
+            path="profile"
+            element={
+              <React.Suspense fallback={<div>Loading...</div>}>
+                <Profile/>
+              </React.Suspense>
+            }
+          />
+        
       </Routes>
+
+
+      
 
         </Box>
         </Box>

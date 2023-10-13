@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
 
 export const mainListItems = (
   <React.Fragment>
-    <Link to={"/home/profile"}>
+    <Link to={"/profile"}>
     <ListItemButton>
       <ListItemIcon>
         <DashboardIcon/>
