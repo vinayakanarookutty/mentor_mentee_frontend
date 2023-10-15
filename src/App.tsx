@@ -9,6 +9,8 @@ import {
   QueryClientProvider,
 } from 'react-query'
 import "./app.css"
+import MentorSignUp from "./components/SignUp/MentorSignUp";
+import MentorLogin from "./components/Login/MentorLogin";
 
 function App() {
 const [user,setUser]=React.useState("");
@@ -28,6 +30,8 @@ const queryClient = new QueryClient()
 <Route path="logIn" element={<Login setUser={setUser}/>}/>
 
 <Route path="signUp" element={<SignUp setUser={setUser}/>}/>
+<Route path="mentor/signUp" element={<MentorSignUp setUser={setUser}/>}/>
+<Route path="mentor/logIn" element={<MentorLogin setUser={setUser}/>}/>
 
 <Route path="/" element={<Home user={user}/>}/>
 
