@@ -34,6 +34,7 @@ const queryClient = new QueryClient()
 <Route path="mentor/logIn" element={<MentorLogin setUser={setUser}/>}/>
 
 <Route path="/" element={<Home user={user}/>}/>
+<Route/>
 
 
 
