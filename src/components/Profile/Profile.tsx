@@ -2,7 +2,7 @@ import React from 'react'
 
 function Profile(prop:any) {
   return (
-    <div>Profile</div>
+    <div>Profile vds</div>
   )
 }
 
