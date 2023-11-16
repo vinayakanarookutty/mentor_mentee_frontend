@@ -28,6 +28,14 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Mentor" />
     </ListItemButton>
+    <Link to={"/students"}>
+    <ListItemButton>
+      <ListItemIcon>
+        <ShoppingCartIcon />
+      </ListItemIcon>
+      <ListItemText primary="Students" />
+    </ListItemButton>
+    </Link>
    
   </React.Fragment>
 );

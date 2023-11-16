@@ -12,6 +12,7 @@ import "./app.css"
 import MentorSignUp from "./components/SignUp/MentorSignUp";
 import MentorLogin from "./components/Login/MentorLogin";
 import MessagePage from "./components/MessagePage/MessagePage";
+import SelectStudents from "./components/StudentList/SelectStudents";
 
 function App() {
 const [user,setUser]=React.useState("");
@@ -35,6 +36,7 @@ const queryClient = new QueryClient()
 <Route path="mentor/logIn" element={<MentorLogin setUser={setUser}/>}/>
 
 <Route path="/" element={<Home user={user}/>}/>
+<Route path="/students" element={<SelectStudents/>} />
 <Route path="/messageMentee" element={<MessagePage/>}/>
 <Route/>
 

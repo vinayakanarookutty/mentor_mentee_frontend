@@ -29,7 +29,7 @@ function MentorSignUp(prop:any) {
 
     const registerClientObj= {
       name:name,
-      phoneNumber:phoneNumber,
+      phoneNumber:phoneNumber,  
       emailId:emailId,
       password:password,
       designation:designation
