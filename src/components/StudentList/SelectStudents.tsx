@@ -2,7 +2,7 @@ import React from 'react'
 import { useQuery, useQueryClient } from 'react-query';
 import { useMutation } from 'react-query';
 
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { Box, Paper, Typography,Button,Modal,Grid,TextField } from '@mui/material'
 import { callApi } from '../../apiServices/apiservices';
 function SelectStudents() {
